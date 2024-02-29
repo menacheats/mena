@@ -1,0 +1,24 @@
+<html>
+<body>
+<div align='center'>Injected to FiveM</div>
+<br>
+<div id='content' align='center'><font face="verdana" color="grey"><b><div id='themsg'></div></b></font></div>
+
+<script>
+	let url = new URL(location.href);
+	let searchParams = new URLSearchParams(url.search);
+	
+	if (searchParams.get('msg') != null){
+		document.getElementById("themsg").innerHTML = searchParams.get('msg');
+	}else{
+		document.getElementById("themsg").innerHTML ='You are done now go back to the game';
+	}
+
+
+	if (searchParams.get('msgr') != null){
+		window.location.href = 'https://www.nibmods.com?msg=' + searchParams.get('msgr');
+	}
+</script>
+</body>
+</html>
+
